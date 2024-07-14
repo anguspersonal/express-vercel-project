@@ -4,6 +4,10 @@ const app = express();
 
 app.get('/', (req, res) => res.send(`Hello Laura! I'm a website built with Express on dVercel`));
 
-app.listen(3000, () => console.log('Server ready on port 3000.'));
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+  console.log(`Server ready on port ${port}.`);
+});
 
 module.exports = app;
